@@ -1,0 +1,35 @@
+# Requirements for Jetson Orin — JetPack 6 (L4T R36.4), CUDA 12.6
+#
+# INSTALL ORDER MATTERS for the Jetson system packages below.
+# Install those first (torch, torchvision, opencv) before pip-installing
+# this file, so that pip does not pull in incompatible PyPI wheels.
+
+# ── Jetson system packages (install BEFORE this file) ─────────────────
+# These must come from NVIDIA JetPack wheels or apt, never PyPI.
+# Listed here as comments so the version constraints are documented.
+#
+# torch==2.8.0           # NVIDIA JetPack wheel for CUDA 12.6 / cuDNN 9.3
+# torchvision==0.23.0    # Must match torch 2.8.x — JetPack wheel
+# opencv-contrib-python   # apt: python3-opencv (system build with CUDA)
+# PyGObject (gi)          # apt: python3-gi (GStreamer Python bindings)
+# python3-tk              # apt: python3-tk (Tkinter for GUIs)
+
+# ── Version-sensitive packages ────────────────────────────────────────
+# These have tight coupling to torch / CUDA / each other.
+
+numpy>=1.24,<2.0         # torch 2.8 and ultralytics both require numpy <2.0
+ultralytics>=8.4,<9.0    # YOLO inference; requires torch >=2.0, numpy <2.0
+ultralytics-thop>=2.0    # ultralytics FLOPs counter
+scipy>=1.10,<2.0         # used by search_supervisor; needs numpy <2.0
+Pillow>=9.0              # image handling; ultralytics needs >=7.1
+matplotlib>=3.5           # optional (GA plotting only); needs numpy <2.0
+
+# ── Packages with no tight version coupling ───────────────────────────
+# These work across a wide range of versions. Pinned to installed for
+# reproducibility, but loosening is safe.
+
+hidapi==0.15.0            # USB HID for whisker sensor board
+lap>=0.5                  # linear assignment (ultralytics dependency)
+pyserial>=3.5             # Arduino serial bridge
+PyYAML>=5.4               # YAML config parsing
+xarm==0.0.4               # UFactory xArm SDK — no newer version available
