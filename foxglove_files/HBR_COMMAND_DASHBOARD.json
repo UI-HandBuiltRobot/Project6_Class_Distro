@@ -1,0 +1,264 @@
+{
+  "configById": {
+    "wskr-panels.WhiskerFanPanel!3a351bf": {},
+    "wskr-panels.CameraArucoPanel!2yriupt": {
+      "cameraTopic": "/wskr_overlay/compressed",
+      "markersTopic": "/WSKR/aruco_markers",
+      "trackedBboxTopic": "/WSKR/tracked_bbox",
+      "targetArucoId": 1,
+      "showHud": true
+    },
+    "Plot!4j6rytp": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.linear.x",
+          "enabled": true,
+          "color": "#4e98e2",
+          "id": "a553cd38-1a9f-434c-91a3-a955e8d3dad9"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.linear.y",
+          "enabled": true,
+          "color": "#f5774d",
+          "id": "1d69362c-a525-4625-a5da-d52319dd44cc"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.angular.z",
+          "enabled": true,
+          "color": "#d21bc4",
+          "id": "699f161f-185a-4550-8338-73f6751bdb42"
+        }
+      ]
+    },
+    "wskr-panels.RobotStatePanel!3li67rs": {},
+    "wskr-panels.WskrCameraPanel!19ehmla": {},
+    "wskr-panels.ToyApproachPanel!3cl9l0f": {},
+    "wskr-panels.AutopilotPanel!17q11fe": {},
+    "wskr-panels.SpeedTaperPanel!4f1ncab": {},
+    "Parameters!46wkblp": {},
+    "StateTransitions!2991c1w": {
+      "paths": [
+        {
+          "value": "/robot_state.data",
+          "timestampMethod": "receiveTime",
+          "customStates": {
+            "type": "discrete",
+            "states": []
+          }
+        },
+        {
+          "value": "/robot_command.data",
+          "timestampMethod": "receiveTime",
+          "customStates": {
+            "type": "discrete",
+            "states": []
+          }
+        },
+        {
+          "value": "/WSKR/tracked_bbox.source",
+          "timestampMethod": "receiveTime",
+          "customStates": {
+            "type": "discrete",
+            "states": []
+          }
+        }
+      ],
+      "isSynced": true
+    },
+    "TopicGraph!3hn547g": {},
+    "RosOut!n2teg9": {
+      "minLogLevel": 2,
+      "preload": true,
+      "searchTerms": [],
+      "nameFilter": {},
+      "fontSize": 12,
+      "topicToRender": "/rosout"
+    },
+    "Stack!2n3dqx6": {
+      "panels": [
+        {
+          "panelId": "Plot!19d9m5x",
+          "size": 0.25
+        },
+        {
+          "panelId": "Plot!29mtuap",
+          "size": 0.25
+        },
+        {
+          "panelId": "Plot!1c9pumi",
+          "size": 0.25
+        },
+        {
+          "panelId": "wskr-panels.WhiskerFanPanel!4ai540",
+          "size": 0.25
+        }
+      ]
+    },
+    "wskr-panels.WskrCameraPanel!3m6j1wl": {},
+    "Teleop!2qhx2h8": {
+      "topic": "/WSKR/cmd_vel",
+      "publishRate": 1,
+      "autoSendStopOnRelease": true,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 10
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -10
+      },
+      "stopButton": {
+        "field": "linear-x",
+        "value": 0
+      }
+    },
+    "Publish!2zn4zza": {
+      "topicName": "/WSKR/stop",
+      "datatype": "std_msgs/msg/Empty",
+      "value": "{}",
+      "advancedView": false,
+      "buttonText": "STOP",
+      "buttonColor": "#ff0000"
+    },
+    "Plot!19d9m5x": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.linear.x",
+          "enabled": true,
+          "color": "#4e98e2",
+          "id": "c4d04e39-70a7-4bfc-8e33-08a5dd3f2d95"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.linear.y",
+          "enabled": true,
+          "color": "#f5774d",
+          "id": "2efff743-5d3e-4742-b2f0-12936859fcad"
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/cmd_vel.angular.z",
+          "enabled": true,
+          "color": "#f032d0",
+          "id": "b62f3ae9-65a4-4385-aa98-8197a45824ed"
+        }
+      ]
+    },
+    "Plot!29mtuap": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/heading_to_target.data",
+          "enabled": true,
+          "color": "#4e98e2",
+          "id": "b663eed0-e996-482f-8eab-6121d4b900fe"
+        }
+      ]
+    },
+    "Plot!1c9pumi": {
+      "paths": [
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/WSKR/target_whisker_lengths.data[:]",
+          "enabled": true,
+          "color": "#4e98e2",
+          "id": "602b8aad-1685-4ab8-abf5-397266e1f206"
+        }
+      ]
+    },
+    "wskr-panels.WhiskerFanPanel!4ai540": {},
+    "Tab!31qckfv": {
+      "tabs": [
+        {
+          "title": "Robot Dashboard",
+          "layout": {
+            "first": {
+              "first": {
+                "first": "wskr-panels.WhiskerFanPanel!3a351bf",
+                "second": "wskr-panels.CameraArucoPanel!2yriupt",
+                "direction": "row"
+              },
+              "second": {
+                "first": "Plot!4j6rytp",
+                "second": "wskr-panels.RobotStatePanel!3li67rs",
+                "direction": "row"
+              },
+              "direction": "column"
+            },
+            "second": {
+              "first": {
+                "first": "wskr-panels.WskrCameraPanel!19ehmla",
+                "second": "wskr-panels.ToyApproachPanel!3cl9l0f",
+                "direction": "row",
+                "splitPercentage": 65.69948186528498
+              },
+              "second": {
+                "first": "wskr-panels.AutopilotPanel!17q11fe",
+                "second": "wskr-panels.SpeedTaperPanel!4f1ncab",
+                "direction": "column"
+              },
+              "direction": "column"
+            },
+            "direction": "row",
+            "splitPercentage": 49.79188345473465
+          }
+        },
+        {
+          "title": "Diagnostics",
+          "layout": {
+            "first": {
+              "first": "Parameters!46wkblp",
+              "second": "StateTransitions!2991c1w",
+              "direction": "row",
+              "splitPercentage": 43.446440452428476
+            },
+            "second": {
+              "first": "TopicGraph!3hn547g",
+              "second": "RosOut!n2teg9",
+              "direction": "row"
+            },
+            "direction": "row",
+            "splitPercentage": 78.19979188345474
+          }
+        },
+        {
+          "title": "Manual Control",
+          "layout": {
+            "first": "Stack!2n3dqx6",
+            "second": {
+              "first": {
+                "first": "wskr-panels.WskrCameraPanel!3m6j1wl",
+                "second": "Teleop!2qhx2h8",
+                "direction": "column",
+                "splitPercentage": 63.795066204006275
+              },
+              "second": "Publish!2zn4zza",
+              "direction": "column",
+              "splitPercentage": 88.17685335527428
+            },
+            "direction": "row"
+          }
+        }
+      ],
+      "activeTabIdx": 0
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": "Tab!31qckfv"
+}

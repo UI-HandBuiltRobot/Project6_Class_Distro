@@ -1,0 +1,12 @@
+# Copy of the udev rules needed to access the Hiwonder xarm
+
+# This file should be copied into /etc/udev/rules.d/
+
+# Users will need to be added to "plugdev" group by admin
+
+# This should give users in the plugdev group access to the hiwonder arm  due to the use of 
+# idVendor and idProduct but will require this file to be updated if the arm for the course is
+# ever changes
+
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5750", MODE="0660", GROUP="plugdev"
+

@@ -1,0 +1,11 @@
+# Copy of the udev rules needed to access the Arduino Every Nano
+
+# This file should be copied into /etc/udev/rules.d/
+
+# Users will need to be added to "plugdev" group by admin
+
+# This should give users in the plugdev group access to the hiwonder arm  due to the use of 
+# idVendor and idProduct but will require this file to be updated if the arm for the course is
+# ever changes
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0058", MODE="0660", GROUP="plugdev"

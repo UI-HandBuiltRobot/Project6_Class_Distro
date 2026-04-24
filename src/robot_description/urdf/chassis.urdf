@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot name="chassis">
+
+  <link name="base_link">
+
+    <visual>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/chassis.stl"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://robot_description/meshes/chassis.stl"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.01905 -0.0015875 0.066675" rpy="0 0 0"/>
+      <mass value="2.0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0"
+               iyy="0.01" iyz="0"
+               izz="0.01"/>
+    </inertial>
+
+  </link>
+
+</robot>

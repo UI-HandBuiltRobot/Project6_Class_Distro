@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ga_distance_frame_module">
+
+  <!-- Static frame at joint 5 for GA distance calculations -->
+  <link name="ga_distance_frame"/>
+
+  <joint name="ga_distance_joint" type="fixed">
+    <parent link="link5"/>
+    <child link="ga_distance_frame"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

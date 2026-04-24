@@ -1,0 +1,71 @@
+{
+  "calibration_info": {
+    "checkerboard_size": [
+      9,
+      6
+    ],
+    "image_size": [
+      1920,
+      1080
+    ],
+    "calibration_error_pixels": 1.5040559162442224
+  },
+  "intrinsics": {
+    "camera_matrix": [
+      [
+        2273.1535159853333,
+        0.0,
+        894.0908771180291
+      ],
+      [
+        0.0,
+        2024.3769923726368,
+        534.9134267755802
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "distortion_coefficients": [
+      [
+        -1.6850662516330235,
+        1.6873858646797855,
+        -0.013615803728416294,
+        -0.01320605122652239,
+        0.7291161308583802
+      ]
+    ]
+  },
+  "extrinsics": {
+    "perspective_corrected": true,
+    "perspective_matrix": [
+      [
+        -142.03936811142555,
+        92.62894773265515,
+        121192.49365697021
+      ],
+      [
+        -18.978464800139243,
+        -112.99132859805908,
+        138106.8523702687
+      ],
+      [
+        -0.031125759450983854,
+        0.18900071889151332,
+        1.0
+      ]
+    ]
+  },
+  "scaling": {
+    "real_world_scale": true,
+    "square_size_real": 23.6,
+    "square_size_pixels": 120.0,
+    "pixels_per_real_unit": 5.084745762711864
+  },
+  "opencv_usage_notes": {
+    "undistort": "cv2.undistort(image, camera_matrix, distortion_coefficients)",
+    "perspective_warp": "cv2.warpPerspective(image, perspective_matrix, (width, height))"
+  }
+}

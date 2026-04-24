@@ -1,0 +1,93 @@
+solid chassis
+
+  facet normal 0 0 -1
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex 0.1254125 -0.0889 0
+      vertex 0.1254125 0.085725 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex 0.1254125 0.085725 0
+      vertex -0.1635125 0.085725 0
+    endloop
+  endfacet
+
+  facet normal 0 0 1
+    outer loop
+      vertex -0.1635125 -0.0889 0.13335
+      vertex 0.1254125 0.085725 0.13335
+      vertex 0.1254125 -0.0889 0.13335
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -0.1635125 -0.0889 0.13335
+      vertex -0.1635125 0.085725 0.13335
+      vertex 0.1254125 0.085725 0.13335
+    endloop
+  endfacet
+
+  facet normal -1 0 0
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex -0.1635125 0.085725 0
+      vertex -0.1635125 0.085725 0.13335
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex -0.1635125 0.085725 0.13335
+      vertex -0.1635125 -0.0889 0.13335
+    endloop
+  endfacet
+
+  facet normal 1 0 0
+    outer loop
+      vertex 0.1254125 -0.0889 0
+      vertex 0.1254125 0.085725 0.13335
+      vertex 0.1254125 0.085725 0
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 0.1254125 -0.0889 0
+      vertex 0.1254125 -0.0889 0.13335
+      vertex 0.1254125 0.085725 0.13335
+    endloop
+  endfacet
+
+  facet normal 0 -1 0
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex 0.1254125 -0.0889 0.13335
+      vertex 0.1254125 -0.0889 0
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -0.1635125 -0.0889 0
+      vertex -0.1635125 -0.0889 0.13335
+      vertex 0.1254125 -0.0889 0.13335
+    endloop
+  endfacet
+
+  facet normal 0 1 0
+    outer loop
+      vertex -0.1635125 0.085725 0
+      vertex 0.1254125 0.085725 0
+      vertex 0.1254125 0.085725 0.13335
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex -0.1635125 0.085725 0
+      vertex 0.1254125 0.085725 0.13335
+      vertex -0.1635125 0.085725 0.13335
+    endloop
+  endfacet
+
+endsolid chassis

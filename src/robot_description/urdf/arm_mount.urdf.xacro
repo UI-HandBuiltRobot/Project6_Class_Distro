@@ -1,0 +1,28 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+
+  <xacro:arg name="mount_x" default="0.0"/>
+  <xacro:arg name="mount_y" default="-0.0015875"/>
+  <xacro:arg name="mount_z" default="0.12065"/>
+  <xacro:arg name="mount_roll" default="0"/>
+  <xacro:arg name="mount_pitch" default="0"/>
+  <xacro:arg name="mount_yaw" default="3.14159"/>
+
+
+  <!-- Chassis -->
+  <xacro:include filename="chassis.xacro"/>
+  <xacro:chassis/>
+
+  <!-- Arm -->
+  <xacro:include filename="hiwonder_xarm_1s.urdf.xacro"/>
+
+  <!-- Attach arm -->
+  <joint name="arm_mount_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="arm_base"/>
+    <origin xyz="$(arg mount_x) $(arg mount_y) $(arg mount_z)"
+            rpy="$(arg mount_roll) $(arg mount_pitch) $(arg mount_yaw)"/>
+  </joint>
+
+
+
+</robot>

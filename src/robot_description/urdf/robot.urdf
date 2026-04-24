@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+  <xacro:include filename="arm_mount.urdf.xacro"/>
+  <xacro:include filename="object_dist_frame.xacro"/>
+  <xacro:include filename="ga_distance_frame.xacro"/>
+</robot>
