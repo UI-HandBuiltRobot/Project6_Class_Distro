@@ -1,28 +1,34 @@
 # Requirements for Jetson Orin — JetPack 6 (L4T R36.4), CUDA 12.6
 #
-# INSTALL ORDER MATTERS for the Jetson system packages below.
-# Install those first (torch, torchvision, opencv) before pip-installing
-# this file, so that pip does not pull in incompatible PyPI wheels.
-
-# ── Jetson system packages (install BEFORE this file) ─────────────────
-# These must come from NVIDIA JetPack wheels or apt, never PyPI.
-# Listed here as comments so the version constraints are documented.
+# PURPOSE: Run this AFTER completing setting_up_local_inference.md to
+# catch any missed pip packages. Students should not need to work through
+# this file manually — it is a one-shot safety net, not an install guide.
 #
-# torch==2.8.0           # NVIDIA JetPack wheel for CUDA 12.6 / cuDNN 9.3
-# torchvision==0.23.0    # Must match torch 2.8.x — JetPack wheel
-# opencv-contrib-python   # apt: python3-opencv (system build with CUDA)
-# PyGObject (gi)          # apt: python3-gi (GStreamer Python bindings)
-# python3-tk              # apt: python3-tk (Tkinter for GUIs)
+#   pip install -r requirements_jetson.txt
+#
+# The packages below are safe to pip-install normally. The items in the
+# manual-install block are excluded because they require special handling
+# that pip cannot enforce from a requirements file.
+
+# ── Manual installs (must be done per setting_up_local_inference.md) ──
+# Documented here for reference only — do NOT add these as bare pip deps.
+#
+# torch==2.8.0           # pip install --index-url https://pypi.jetson-ai-lab.io/jp6/cu126 torch==2.8.0 torchvision==0.23.0
+# torchvision==0.23.0    # (same command as above)
+# ultralytics>=8.4,<9.0  # pip install --no-deps ultralytics
+#                        #   (plain 'pip install ultralytics' pulls CPU-only PyTorch from PyPI)
+# PyGObject (gi)         # apt: python3-gi (GStreamer Python bindings)
+# python3-tk             # apt: python3-tk (Tkinter for GUIs)
 
 # ── Version-sensitive packages ────────────────────────────────────────
 # These have tight coupling to torch / CUDA / each other.
 
-numpy>=1.24,<2.0         # torch 2.8 and ultralytics both require numpy <2.0
-ultralytics>=8.4,<9.0    # YOLO inference; requires torch >=2.0, numpy <2.0
-ultralytics-thop>=2.0    # ultralytics FLOPs counter
-scipy>=1.10,<2.0         # used by search_supervisor; needs numpy <2.0
-Pillow>=9.0              # image handling; ultralytics needs >=7.1
-matplotlib>=3.5           # optional (GA plotting only); needs numpy <2.0
+numpy>=1.26,<2.0              # torch 2.8 and ultralytics both require numpy <2.0; >=1.26 for ABI compat
+opencv-contrib-python==4.10.* # cv2.aruco requires contrib build; plain opencv-python conflicts
+ultralytics-thop>=2.0         # ultralytics FLOPs counter (safe to pip-install normally)
+scipy>=1.10,<2.0              # used by search_supervisor; needs numpy <2.0
+Pillow>=9.0                   # image handling; ultralytics needs >=7.1
+matplotlib>=3.5               # optional (GA plotting only); needs numpy <2.0
 
 # ── Packages with no tight version coupling ───────────────────────────
 # These work across a wide range of versions. Pinned to installed for
